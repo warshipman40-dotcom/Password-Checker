@@ -19,9 +19,9 @@ def pwned_api_check(password):
     """Converts password to SHA-1 HASH"""
     #check if password exists in the API response
     #unicode objects must be encoded before hashing, so we use UTF-8 (standard)
-    #hexdigest returns a stringle of double length, containing only hexadecimal digits
+    #hexdigest returns a string of double length, containing only hexadecimal digits
+    #hexdisgest turns raw data into readable strings
     #api SHA-1 hashes are all uppercase, so we use .upper()
     sha1_password = hashlib.sha1(password.encode("utf-8")).hexdigest().upper()
     return sha1_password
-
 print(pwned_api_check("warship78"))
